@@ -76,7 +76,7 @@ Esto corre `js → css → imagenes` y deja Gulp en modo watch sobre `src/scss`,
 6. Levantá un servidor apuntando a `public/` como document root:
 
 ```bash
-php -S localhost:8000 -t public
+php -S localhost:3000 -t public
 ```
 
 ## Usuarios de prueba (seeds)

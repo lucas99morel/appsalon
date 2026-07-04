@@ -79,8 +79,17 @@ Esto corre `js → css → imagenes` y deja Gulp en modo watch sobre `src/scss`,
 php -S localhost:8000 -t public
 ```
 
-## Estructura
+## Usuarios de prueba (seeds)
 
+El `schema.sql` incluye dos usuarios ya confirmados para probar la app sin tener que registrarte:
+
+| Rol      | Email              | Password   |
+|----------|---------------------|------------|
+| Admin    | correo@correo.com   | password   |
+| Cliente  | ana@correo.com      | password   |
+
+
+## Estructura
 ```
 AppSalon/
 ├── classes/

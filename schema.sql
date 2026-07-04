@@ -28,7 +28,7 @@ CREATE TABLE `citas` (
   PRIMARY KEY (`id`),
   KEY `usuarioId` (`usuarioId`),
   CONSTRAINT `citas_ibfk_1` FOREIGN KEY (`usuarioId`) REFERENCES `usuarios` (`id`) ON DELETE SET NULL ON UPDATE SET NULL
-) ENGINE=InnoDB AUTO_INCREMENT=23 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=24 DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `citasServicios` (
   `id` int NOT NULL AUTO_INCREMENT,
@@ -59,13 +59,15 @@ CREATE TABLE `usuarios` (
   `confirmado` tinyint(1) DEFAULT NULL,
   `token` varchar(15) DEFAULT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB AUTO_INCREMENT=10 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `citas` (`id`, `fecha`, `hora`, `usuarioId`) VALUES
-(22, '2023-11-29', '10:30:00', 9);
+(22, CURDATE(), '10:30:00', 9),
+(23, DATE_ADD(CURDATE(), INTERVAL 1 DAY), '10:30:00', 9);
 
 INSERT INTO `citasServicios` (`id`, `citaId`, `servicioId`) VALUES
-(18, 22, 2);
+(18, 22, 4),
+(19, 23, 8);
 
 INSERT INTO `servicios` (`id`, `nombre`, `precio`) VALUES
 (1, 'Corte de Cabello Mujer ACTUALIZADO', 120.00),
@@ -81,7 +83,8 @@ INSERT INTO `servicios` (`id`, `nombre`, `precio`) VALUES
 (11, 'Tratamiento Capilar', 150.00);
 
 INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `email`, `password`, `telefono`, `admin`, `confirmado`, `token`) VALUES
-(9, ' Liqui', 'Morel', 'correo@correo.com', '$2y$10$9TTiKdZXQaUQaSbVKd7wPOucLusU8ebkv2h2IgqNjQXs.uLTW7CAq', '1234567890', 1, 1, '');
+(9, 'Liqui', 'Morel', 'correo@correo.com', '$2y$10$9TTiKdZXQaUQaSbVKd7wPOucLusU8ebkv2h2IgqNjQXs.uLTW7CAq', '1234567890', 1, 1, ''),
+(10, 'Ana', 'Gómez', 'ana@correo.com', '$2y$10$9TTiKdZXQaUQaSbVKd7wPOucLusU8ebkv2h2IgqNjQXs.uLTW7CAq', '0987654321', 0, 1, '');
 
 
 

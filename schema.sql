@@ -62,8 +62,8 @@ CREATE TABLE `usuarios` (
 ) ENGINE=InnoDB AUTO_INCREMENT=11 DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `citas` (`id`, `fecha`, `hora`, `usuarioId`) VALUES
-(22, CURDATE(), '10:30:00', 9),
-(23, DATE_ADD(CURDATE(), INTERVAL 1 DAY), '10:30:00', 9);
+(22, CURDATE(), '10:30:00', 10),
+(23, DATE_ADD(CURDATE(), INTERVAL 1 DAY), '10:30:00', 10);
 
 INSERT INTO `citasServicios` (`id`, `citaId`, `servicioId`) VALUES
 (18, 22, 4),
